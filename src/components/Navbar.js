@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
-  const [active, setActive] = useState('about');
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const scrollToSection = (id) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-    setActive(id);
-  };
+  const links = [
+    { label: 'ABOUT', path: '/about' },
+    { label: 'SKILLS', path: '/skills' },
+    { label: 'PROJECT', path: '/project' },
+    { label: 'CONTACT', path: '/contact' },
+  ];
 
   return (
     <nav style={{
@@ -23,30 +26,33 @@ const Navbar = () => {
       alignItems: 'center',
       borderBottom: '0.5px solid #222'
     }}>
-      <span style={{
-        fontSize: '13px',
-        fontWeight: 600,
-        letterSpacing: '2px',
-        color: '#fff'
-      }}>
+      <span
+        onClick={() => navigate('/')}
+        style={{
+          fontSize: '13px',
+          fontWeight: 600,
+          letterSpacing: '2px',
+          color: '#fff',
+          cursor: 'pointer'
+        }}>
         PORTFOLIO.
       </span>
 
       <div style={{ display: 'flex', gap: '2rem' }}>
-        {['about', 'skills', 'project', 'contact'].map((item) => (
+        {links.map((link) => (
           <span
-            key={item}
-            onClick={() => scrollToSection(item)}
+            key={link.path}
+            onClick={() => navigate(link.path)}
             style={{
               fontSize: '12px',
               letterSpacing: '2px',
-              color: active === item ? '#fff' : '#666',
+              color: location.pathname === link.path ? '#fff' : '#666',
               textTransform: 'uppercase',
               cursor: 'pointer',
               transition: 'color 0.2s'
             }}
           >
-            {item}
+            {link.label}
           </span>
         ))}
       </div>
