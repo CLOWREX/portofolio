@@ -23,18 +23,28 @@ const Project = () => {
   }, []);
 
   const projects = [
-    { num: '01', title: 'SkillMatch App', tech: 'Mobile / Flutter', year: '2025', path: '/project/skillmatch', external: false },
-    { num: '02', title: 'Website Project', tech: 'Frontend / React.js', year: '2025', path: 'https://github.com/CLOWREX', external: true },
-    { num: '03', title: 'Game Project', tech: 'Game / Unity', year: '2025', path: 'https://github.com/CLOWREX', external: true },
+    {
+      num: '01',
+      title: 'SkillMatch App',
+      tech: 'Mobile / Flutter',
+      year: '2025',
+      path: '/project/skillmatch',
+    },
+    {
+      num: '02',
+      title: 'Website Project',
+      tech: 'Frontend / React.js',
+      year: '2025',
+      path: '/project/website',
+    },
+    {
+      num: '03',
+      title: 'Website Project',
+      tech: 'Frontend / React.js',
+      year: '2025',
+      path: '/project/website',
+    },
   ];
-
-  const handleClick = (project) => {
-    if (project.external) {
-      window.open(project.path, '_blank');
-    } else {
-      navigate(project.path);
-    }
-  };
 
   return (
     <section id="project" ref={ref} style={{ padding: '6rem 3rem', borderBottom: '0.5px solid #1a1a1a' }}>
@@ -53,7 +63,7 @@ const Project = () => {
           <div
             key={i}
             className="fade"
-            onClick={() => handleClick(project)}
+            onClick={() => navigate(project.path)}
             style={{
               opacity: 0,
               transform: 'translateY(30px)',
@@ -65,13 +75,16 @@ const Project = () => {
               padding: '1.8rem 0',
               borderBottom: '0.5px solid #1a1a1a',
               gap: '2rem',
-              cursor: 'pointer'
+              cursor: 'pointer',
             }}
             onMouseEnter={e => e.currentTarget.querySelector('.proj-title').style.color = '#aaa'}
             onMouseLeave={e => e.currentTarget.querySelector('.proj-title').style.color = '#fff'}
           >
             <span style={{ fontSize: '12px', color: '#444' }}>{project.num}</span>
-            <div className="proj-title" style={{ fontSize: 'clamp(1.2rem, 3vw, 2rem)', fontWeight: 700, textTransform: 'uppercase', color: '#fff', transition: 'color 0.3s' }}>
+            <div
+              className="proj-title"
+              style={{ fontSize: 'clamp(1.2rem, 3vw, 2rem)', fontWeight: 700, textTransform: 'uppercase', color: '#fff', transition: 'color 0.3s' }}
+            >
               {project.title}
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
