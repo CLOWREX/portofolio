@@ -6,8 +6,8 @@ import Skills from './components/Skills';
 import Project from './components/Projects';
 import Contact from './components/Contact';
 import SkillMatch from './components/SkillMatch';
-import WebsiteProject from './components/Websiteproject';
-import WebProject from './components/Webproject';
+import QRLog from './components/QRLog';
+import FinanceTracker from './components/FinanceTracker';
 
 function App() {
   return (
@@ -19,8 +19,8 @@ function App() {
         <Route path="/skills" element={<Skills />} />
         <Route path="/project" element={<Project />} />
         <Route path="/project/skillmatch" element={<SkillMatch />} />
-        <Route path="/project/website" element={<WebsiteProject />} />
-        <Route path="/project/game" element={<WebProject />} />
+        <Route path="/project/qrlog" element={<QRLog />} />
+        <Route path="/project/finance" element={<FinanceTracker />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>

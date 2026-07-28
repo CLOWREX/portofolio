@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const GameProject = () => {
+const QRLog = () => {
   const ref = useRef(null);
   const navigate = useNavigate();
 
@@ -22,45 +22,44 @@ const GameProject = () => {
     return () => observer.disconnect();
   }, []);
 
-  // ── Ganti data di bawah sesuai project kamu ─────────────────────
   const projectMeta = {
-    category: 'Game Development — Unity — 2025',
-    title: ['GAME', 'PROJECT.'],
-    desc: `An interactive game experience built with Unity Engine.
-Exploring game mechanics, player interactions, and immersive
-environments as part of the broader software development journey.`,
-    techStack: ['Unity', 'C#', 'Game Design', '2D/3D Assets'],
-    githubUrl: 'https://github.com/CLOWREX/finance-tracker',
+    category: 'Web Application — React.js — 2025',
+    title: ['QR', 'LOG.'],
+    desc: `A QR-based attendance system for schools. Students scan a QR
+code to check in, view their weekly schedule, and track attendance
+history — while teachers manage student data, register new students,
+and monitor attendance directly from their own dashboard.`,
+    techStack: ['React', 'QR Code', 'Role-based Access', 'Context API'],
+    githubUrl: 'https://github.com/CLOWREX/AplikasiAbsensiSiswa',
   };
 
   const sections = [
     {
       id: '01',
-      image: 'https://placehold.co/640x400/0d0d0d/222?text=01+—+Gameplay',
-      imageAlt: 'Gameplay overview',
-      heading: 'Gameplay yang terasa responsif',
-      body: 'Kontrol dirancang agar terasa natural di tangan pemain. Setiap input direspons dengan animasi dan feedback yang tepat, menciptakan pengalaman bermain yang smooth dan memuaskan.',
+      image: '/image/DashboardSiswa.png',
+      imageAlt: 'Student home dashboard',
+      heading: 'Dashboard siswa yang ramah dan informatif',
+      body: 'Siswa disambut dengan sapaan personal dan akses cepat ke fitur utama seperti Presence, History, Schedule, dan Profile. Setiap fitur ditampilkan dalam kartu yang jelas dengan ikon yang mudah dipahami.',
     },
     {
       id: '02',
-      image: 'https://placehold.co/640x400/0d0d0d/222?text=02+—+Level+Design',
-      imageAlt: 'Level design',
-      heading: 'Level design yang menantang secara bertahap',
-      body: 'Setiap level dibangun dengan kurva kesulitan yang terukur. Pemain diperkenalkan dengan mekanik baru secara perlahan sebelum dihadapkan pada tantangan yang lebih kompleks.',
+      image: '/image/ScheduleSiswa.png',
+      imageAlt: 'Student schedule page',
+      heading: 'Jadwal harian yang tersusun rapi',
+      body: 'Siswa dapat melihat jadwal pelajaran per hari lengkap dengan jam, nama guru, dan ruangan. Navigasi antar hari dilakukan melalui tab yang responsif, memudahkan siswa mengecek jadwal kapan saja.',
     },
     {
       id: '03',
-      image: 'https://placehold.co/640x400/0d0d0d/222?text=03+—+Visual+%26+Audio',
-      imageAlt: 'Visual and audio design',
-      heading: 'Visual dan audio yang membangun atmosfer',
-      body: 'Aset visual dan efek suara dipilih untuk memperkuat identitas game. Konsistensi gaya dari UI hingga environment menciptakan dunia yang kohesif dan imersif bagi pemain.',
+      image: '/image/DasboardGuru.png',
+      imageAlt: 'Teacher dashboard',
+      heading: 'Dashboard guru untuk kelola presensi',
+      body: 'Guru memiliki akses berbeda: memeriksa kehadiran siswa, mendaftarkan siswa baru, dan mengelola data presensi secara langsung. Role-based access memastikan setiap pengguna hanya melihat fitur yang relevan dengan perannya.',
     },
   ];
 
   return (
     <div ref={ref} style={{ paddingTop: '80px', background: '#0a0a0a', minHeight: '100vh' }}>
 
-      {/* ── Hero ── */}
       <section style={{ padding: '4rem 3rem', borderBottom: '0.5px solid #1a1a1a' }}>
         <div className="fade" style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.7s ease, transform 0.7s ease' }}>
           <div style={{ marginBottom: '2rem' }}>
@@ -84,7 +83,6 @@ environments as part of the broader software development journey.`,
         </div>
       </section>
 
-      {/* ── Zigzag Documentation ── */}
       <section style={{ padding: '4rem 3rem', borderBottom: '0.5px solid #1a1a1a' }}>
         <div className="fade" style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.7s ease, transform 0.7s ease' }}>
           <p style={{ fontSize: '11px', letterSpacing: '3px', color: '#555', textTransform: 'uppercase', marginBottom: '4rem' }}>
@@ -135,7 +133,6 @@ environments as part of the broader software development journey.`,
         })}
       </section>
 
-      {/* ── Tech Stack ── */}
       <section style={{ padding: '4rem 3rem', borderBottom: '0.5px solid #1a1a1a' }}>
         <div className="fade" style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.7s ease, transform 0.7s ease' }}>
           <p style={{ fontSize: '11px', letterSpacing: '3px', color: '#555', textTransform: 'uppercase', marginBottom: '2rem' }}>Tech Stack</p>
@@ -147,7 +144,6 @@ environments as part of the broader software development journey.`,
         </div>
       </section>
 
-      {/* ── GitHub link ── */}
       <section style={{ padding: '4rem 3rem' }}>
         <div className="fade" style={{ opacity: 0, transform: 'translateY(30px)', transition: 'opacity 0.7s ease, transform 0.7s ease', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div>
@@ -170,4 +166,4 @@ environments as part of the broader software development journey.`,
   );
 };
 
-export default GameProject;
+export default QRLog;

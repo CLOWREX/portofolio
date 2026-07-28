@@ -32,17 +32,17 @@ const Project = () => {
     },
     {
       num: '02',
-      title: 'Website Project',
+      title: 'Finance Tracker',
       tech: 'Frontend / React.js',
       year: '2025',
-      path: '/project/website',
+      path: '/project/finance',
     },
     {
       num: '03',
-      title: 'Website Project',
-      tech: 'Frontend / React.js',
+      title: 'QRLog',
+      tech: 'Web / React.js',
       year: '2025',
-      path: '/project/website',
+      path: '/project/qrlog',
     },
   ];
 

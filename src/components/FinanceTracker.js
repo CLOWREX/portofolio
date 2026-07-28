@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const WebsiteProject = () => {
+const FinanceTracker = () => {
   const ref = useRef(null);
   const navigate = useNavigate();
 
@@ -24,36 +24,37 @@ const WebsiteProject = () => {
 
   // ── Ganti data di bawah sesuai project kamu ─────────────────────
   const projectMeta = {
-    category: 'Frontend — React.js — 2025',
-    title: ['WEBSITE', 'PROJECT.'],
-    desc: `A modern web application built with React.js, focused on clean UI
-and smooth user experience. Designed to be fast, responsive,
-and accessible across all devices.`,
-    techStack: ['React.js', 'JavaScript', 'HTML', 'CSS'],
-    githubUrl: 'https://github.com/CLOWREX',
+    category: 'Web Development — React.js — 2025',
+    title: ['FINANCE', 'TRACKER.'],
+    desc: `A personal finance tracker built with React and Context API.
+Helps users record income and expenses, visualize spending patterns,
+and export financial reports — all wrapped in a clean, responsive
+interface with dark and light mode support.`,
+    techStack: ['React', 'Context API', 'Recharts', 'ExcelJS', 'LocalStorage'],
+    githubUrl: 'https://github.com/CLOWREX/finance-tracker',
   };
 
   const sections = [
     {
       id: '01',
-      image: 'https://placehold.co/640x400/0d0d0d/222?text=01+—+Landing+Page',
-      imageAlt: 'Landing page',
-      heading: 'Landing page yang langsung bicara',
-      body: 'Halaman utama dirancang untuk menyampaikan pesan utama dalam hitungan detik. Layout bersih dengan hierarki tipografi yang jelas memandu pengunjung ke call-to-action tanpa kebingungan.',
+      image: '/image/Dashboard.png',
+      imageAlt: 'Dashboard overview',
+      heading: 'Dashboard yang ringkas dan informatif',
+      body: 'Saldo, total income, dan total expense ditampilkan langsung di bagian atas. Grafik pie chart menampilkan proporsi pengeluaran per kategori — seperti Baju, Baju Sekolah, Celana, Keperluan Motor, dan Makanan Pokok — sehingga pengguna langsung tahu ke mana uangnya mengalir.',
     },
     {
       id: '02',
-      image: 'https://placehold.co/640x400/0d0d0d/222?text=02+—+Core+Feature',
-      imageAlt: 'Core feature',
-      heading: 'Fitur utama yang mudah digunakan',
-      body: 'Antarmuka dibangun dengan komponen React yang modular dan reusable. Setiap interaksi dibuat intuitif — pengguna tidak perlu membaca manual untuk memahami cara kerja aplikasi.',
+      image: '/image/Transaksi.png',
+      imageAlt: 'Transaction management',
+      heading: 'Catat transaksi dengan kategori yang fleksibel',
+      body: 'Pengguna dapat menambahkan transaksi Income maupun Expense lengkap dengan nominal, kategori, tanggal, dan catatan opsional. Daftar transaksi juga bisa difilter berdasarkan tipe, kategori, dan rentang tanggal, serta diekspor langsung ke Excel.',
     },
     {
       id: '03',
-      image: 'https://placehold.co/640x400/0d0d0d/222?text=03+—+Responsive',
-      imageAlt: 'Responsive design',
-      heading: 'Responsive di semua ukuran layar',
-      body: 'Tampilan menyesuaikan diri secara mulus dari desktop hingga mobile. Setiap breakpoint diperhatikan agar pengalaman pengguna tetap konsisten tanpa mengorbankan estetika desain.',
+      image: '/image/Laporan.png',
+      imageAlt: 'Financial reports',
+      heading: 'Laporan tren bulanan & ringkasan kategori',
+      body: 'Grafik batang menampilkan perbandingan income dan expense setiap bulan, dilengkapi tabel ringkasan net per kategori. Fitur ini membantu pengguna mengevaluasi pola keuangan mereka secara berkala.',
     },
   ];
 
@@ -170,4 +171,4 @@ and accessible across all devices.`,
   );
 };
 
-export default WebsiteProject;
+export default FinanceTracker;
